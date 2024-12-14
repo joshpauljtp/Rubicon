@@ -14,7 +14,7 @@ function ClusterSwapper({
   cluster: Cluster;
   showTestSuite: boolean;
 }) {
-  const { config, setConfig, isLoading, readyState } = useConfig();
+  const { config, setConfig } = useConfig();
   const [isFullscreen, setIsFullScreen] = useState(false);
 
   const DEFAULT_CLUSTER = Cluster.ALPHA;
@@ -34,14 +34,6 @@ function ClusterSwapper({
       body?.requestFullscreen();
     }
   };
-
-  // if (isLoading)
-  //   return (
-  //     <main>
-  //       <MainLoading connectionState={readyState} />
-  //     </main>
-  //   );
-
   return (
     <Suspense>
       <main onClick={onMainClick}>

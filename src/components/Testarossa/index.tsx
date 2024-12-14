@@ -2,6 +2,7 @@ import { useRive } from "@rive-app/react-canvas";
 import { useEffect } from "react";
 import RiveFile from "../../assets/Testarossa/testarossa.riv";
 import { Config } from "../../types";
+import "./styles.css";
 
 interface Props {
   config: Config;

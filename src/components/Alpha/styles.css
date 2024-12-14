@@ -1,6 +1,16 @@
+#root {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr;
+  width: 100%;
+}
+
 body {
-  font-family: "Orbitron", system-ui, sans-serif;
+  display: flex;
+  place-items: center;
+  min-height: 100dvh;
   background-color: #242424;
+  min-height: unset;
 
   --cardBg: #111111;
   --inactive: #6a6a6a;
@@ -13,6 +23,8 @@ body {
 }
 
 main {
+  aspect-ratio: 18 / 9;
+  width: 100%;
   display: grid;
   grid-template-columns: 3fr 4fr 3fr;
   grid-template-rows: auto 64px;
@@ -20,6 +32,7 @@ main {
   border-radius: 20px;
   background-color: #1b1b1b;
   padding: 1.5rem 1rem;
+  font-family: "Orbitron", system-ui, sans-serif;
 }
 
 main > * {

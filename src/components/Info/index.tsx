@@ -195,7 +195,7 @@ function Info() {
     const btnText = demoMode ? "Demo" : "Launch";
     const href = `${link}${demoMode ? "?showTestSuite=true" : ""}`;
     const disabled = demoMode
-      ? true
+      ? false
       : isLoading || readyState !== ReadyState.OPEN;
 
     return (

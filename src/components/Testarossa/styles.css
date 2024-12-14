@@ -1,0 +1,17 @@
+#root {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  place-items: center;
+  min-height: 100dvh;
+}
+
+main {
+  aspect-ratio: 18 / 9;
+  width: 100%;
+}

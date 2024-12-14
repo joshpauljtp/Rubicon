@@ -109,10 +109,6 @@ h6 {
     format("opentype");
 }
 
-* {
-  box-sizing: border-box;
-}
-
 body {
   font-family: "Manrope", sans-serif;
   color: var(--foreground);
@@ -155,10 +151,6 @@ button {
   border-radius: 0.25rem;
   font-size: 0.825rem;
   font-weight: 500;
-}
-
-main {
-  height: 100vh;
 }
 
 button.silent {
@@ -228,6 +220,33 @@ button.pill:hover {
 
 .pointerEvents-none {
   pointer-events: none;
+}
+
+.test-suite {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(2, auto);
+  align-items: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.test-suite div {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.test-suite input[type="range"] {
+  width: 200px;
+}
+
+.test-suite input[type="number"] {
+  width: 100px;
+}
+
+.test-suite input[type="number"],
+.test-suite input[type="checkbox"] {
+  justify-self: end;
 }
 
 /* 
