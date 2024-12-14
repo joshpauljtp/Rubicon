@@ -136,6 +136,16 @@ body {
   font-family: "DM Sans", sans-serif;
 }
 
+h2 {
+  font-size: 1.75rem;
+  line-height: 1.5em;
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.5em;
+}
+
 button {
   --color: var(--background);
   --backgroundColor: var(--foreground);
