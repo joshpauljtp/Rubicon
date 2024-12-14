@@ -1,3 +1,68 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* END OF RESET */
+
 :root {
   color-scheme: light dark;
   background-color: #242424;
@@ -7,6 +72,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  --background: #09090b;
+  --backgroundMuted: hsl(240, 10%, 6%);
+  --foreground: #fafafa;
+  --foregroundMuted: hsl(0 0% 85%);
+  --border: hsl(240 3.7% 16% / 0.8);
+
   --cardBg: #111111;
   --inactive: #6a6a6a;
   --primary: #6ce0a8;
@@ -15,6 +86,10 @@
   --warning: #e0d46c;
 
   --shadow: 0 0 16px -2px currentColor;
+
+  --font-quantico: "Quantico", sans-serif;
+  --font-rajdhani: "Rajdhani", sans-serif;
+  --font-orbitron: "Orbitron", system-ui, sans-serif;
 }
 
 @font-face {
@@ -38,6 +113,124 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: "Manrope", sans-serif;
+  color: var(--foreground);
+  background-color: var(--background);
+  min-height: 100dvh;
+}
+
+.font-orbitron {
+  font-family: "Orbitron", system-ui, sans-serif;
+}
+
+.font-quantico {
+  font-family: "Quantico", sans-serif;
+}
+
+.font-rajdhani {
+  font-family: "Rajdhani", sans-serif;
+}
+
+.font-oxanium {
+  font-family: "Oxanium", sans-serif;
+}
+
+.font-DmSans {
+  font-family: "DM Sans", sans-serif;
+}
+
+button {
+  --color: var(--background);
+  --backgroundColor: var(--foreground);
+  --borderColor: var(--border);
+  --padding: 0.5rem 1em;
+  appearance: none;
+  cursor: pointer;
+  background-color: var(--backgroundColor);
+  color: var(--color);
+  outline: none;
+  border: none;
+  padding: var(--padding);
+  border-radius: 0.25rem;
+  font-size: 0.825rem;
+  font-weight: 500;
+}
+
+main {
+  height: 100vh;
+}
+
+button.silent {
+  --color: var(--foreground);
+  --backgroundColor: transparent;
+}
+
+button.outlined {
+  outline: 1px solid var(--border);
+  --borderColor: var(--border);
+}
+
+button.silent:hover {
+  --backgroundColor: var(--backgroundMuted);
+}
+
+button.icon {
+  --padding: 1em;
+  aspect-ratio: 1;
+}
+
+button.icon:hover {
+  --padding: 1em;
+  aspect-ratio: 1;
+}
+
+p {
+  margin-bottom: 0.5rem;
+}
+
+.verticalDivider {
+  height: 100%;
+  width: 1px;
+  background-color: var(--border);
+}
+
+.riveIcon {
+  scale: 0.625;
+}
+
+.noSpacing {
+  --spacing: 0;
+}
+
+a {
+  color: inherit;
+}
+
+.pill {
+  --backgroundColor: var(--background);
+  padding: 0.25em 0.5em;
+  border: 1px solid;
+  color: var(--foreground);
+  background: var(--backgroundColor);
+  border-color: var(--foreground);
+  border-radius: 0.25rem;
+  font-size: 12px;
+}
+
+button.pill:hover {
+  --backgroundColor: var(--backgroundMuted);
+}
+
+.cursor-help {
+  cursor: help;
+}
+
+.pointerEvents-none {
+  pointer-events: none;
+}
+
+/* 
 body {
   margin: 0;
   display: flex;
@@ -98,4 +291,4 @@ main {
 .test-suite input[type="number"],
 .test-suite input[type="checkbox"] {
   justify-self: end;
-}
+} */
