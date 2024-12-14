@@ -1,9 +1,10 @@
-import { useMemo } from "react";
+import { lazy, useMemo } from "react";
 import { Cluster } from "../types";
 import Clusters from "./Clusters";
 import ClusterSwapper from "./ClusterSwapper";
 import { CLUSTERS } from "./constants";
-import Info from "./Info";
+
+const Info = lazy(() => import("./Info"));
 
 function Navigator() {
   const { cluster, pathname, showTestSuite } = useMemo(() => {
