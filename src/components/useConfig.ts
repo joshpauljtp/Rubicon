@@ -29,7 +29,7 @@ function useConfig() {
   const [targetSpeed, setTargetSpeed] = useState(0);
 
   useEffect(() => {
-    let timerId: number;
+    let timerId: NodeJS.Timeout;
     if (readyState === ReadyState.OPEN) {
       timerId = setTimeout(() => {
         setIsLoading(false);
