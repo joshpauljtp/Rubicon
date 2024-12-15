@@ -73,7 +73,7 @@ h6 {
   -moz-osx-font-smoothing: grayscale;
 
   --background: #09090b;
-  --backgroundMuted: hsl(240, 10%, 6%);
+  --backgroundMuted: hsl(240, 10%, 8%);
   --foreground: #fafafa;
   --foregroundMuted: hsl(0 0% 85%);
   --border: hsl(240 3.7% 16% / 0.8);
@@ -211,11 +211,13 @@ a {
 
 .pill {
   --backgroundColor: var(--background);
+  --color: var(--foreground);
+  --border: var(--foregroundMuted);
   padding: 0.25em 0.5em;
   border: 1px solid;
-  color: var(--foreground);
+  color: var(--color);
   background: var(--backgroundColor);
-  border-color: var(--foreground);
+  border-color: var(--border);
   border-radius: 0.25rem;
   font-size: 12px;
 }
