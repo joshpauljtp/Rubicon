@@ -135,7 +135,7 @@ function DemoInfoModal({
           to unexpected behavior. To override this, please click the button
           below.
         </p>
-        <button onClick={switchDemoModeOff}>Switch Demo Mode Off</button>
+        <button onClick={switchDemoModeOff}>Disable Demo Mode</button>
       </div>
     </aside>
   );
@@ -222,12 +222,12 @@ function Info() {
         </button>
       </header>
       <section className={styles.info}>
-        <h2>Personal Digital Instrument Cluster</h2>
+        <h2>Custom Motorcycle Instrument Cluster</h2>
         <p>
-          Welcome to Project Rubicon - your personal motorcycle instrument
-          cluster for the new age. This project is currently in a POC state,
-          with newer improvements being added over time. For more information,
-          check out our link.
+          Welcome to Project Rubicon - combining IoT and Web tech to create a
+          platform for your personal motorcycle instrument cluster. This project
+          is currently in a POC state, with newer improvements being added over
+          time. For more information, check out our link.
         </p>
         <div>
           <button>More Info</button>
