@@ -1,10 +1,10 @@
 import { lazy, useMemo } from "react";
 import { Cluster } from "../types";
-import Clusters from "./Clusters";
 import ClusterSwapper from "./ClusterSwapper";
 import { CLUSTERS } from "./constants";
 
 const Info = lazy(() => import("./Info"));
+const Home = lazy(() => import("./Home"));
 
 function Navigator() {
   const { cluster, pathname, showTestSuite } = useMemo(() => {
@@ -22,9 +22,9 @@ function Navigator() {
 
   if (CLUSTERS.map((c) => c.link).includes(pathname))
     return <ClusterSwapper cluster={cluster} showTestSuite={showTestSuite} />;
-  else if (pathname === "/clusters") return <Clusters />;
+  else if (pathname === "/info") return <Info />;
 
-  return <Info />;
+  return <Home />;
 }
 
 export default Navigator;

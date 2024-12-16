@@ -262,6 +262,9 @@ button.pill:hover {
   justify-self: end;
 }
 
+.textDecoration-none {
+  text-decoration: none;
+}
 /* 
 body {
   margin: 0;
