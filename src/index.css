@@ -74,6 +74,7 @@ h6 {
 
   --background: #09090b;
   --backgroundMuted: hsl(240, 10%, 8%);
+  --backgroundLightened: hsl(240, 10%, 20%);
   --foreground: #fafafa;
   --foregroundMuted: hsl(0 0% 85%);
   --border: hsl(240 3.7% 16% / 0.8);
@@ -223,7 +224,7 @@ a {
 }
 
 button.pill:hover {
-  --backgroundColor: var(--backgroundMuted);
+  --backgroundColor: var(--backgroundLightened);
 }
 
 .cursor-help {

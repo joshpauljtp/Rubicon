@@ -103,10 +103,6 @@ aside ol {
   color: var(--foregroundMuted);
 }
 
-aside ol > li {
-  margin-bottom: 0.5rem;
-}
-
 .ctaContainer {
   display: flex;
   align-items: center;
