@@ -18,7 +18,7 @@ function ClusterAlpha({ config }: Props) {
   };
 
   return (
-    <>
+    <div className="alpha">
       <section>
         <RPM rpm={config.rpm} />
         <Speed speed={config.speed} />
@@ -27,7 +27,7 @@ function ClusterAlpha({ config }: Props) {
       <Indicator dir="left" active={config.indicatorLeft} />
       <Fuel fuelPercent={config.fuel} />
       <Indicator dir="right" active={config.indicatorRight} />
-    </>
+    </div>
   );
 }
 

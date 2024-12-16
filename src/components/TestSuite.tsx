@@ -11,7 +11,7 @@ function TestSuite({ config, setConfig }: Props) {
   const MAX_RPM = 12000;
 
   return (
-    <aside className="test-suite">
+    <section className="test-suite">
       <>
         Speed
         <div>
@@ -142,7 +142,7 @@ function TestSuite({ config, setConfig }: Props) {
       <a href="/">
         <button>Back to Main Menu</button>
       </a>
-    </aside>
+    </section>
   );
 }
 

@@ -1,41 +1,41 @@
 .page {
   display: flex;
   flex-direction: column;
-  max-width: 1400px;
+  width: min(100%, 1400px);
   margin-inline: auto;
   border: 1px solid var(--border);
   border-top: none;
   min-height: 100dvh;
   --spacing: 1.5rem;
-}
 
-.page section,
-.page header,
-.page footer {
-  padding: var(--spacing);
-}
+  section,
+  header,
+  footer {
+    padding: var(--spacing);
+  }
 
-.page > main {
-  padding: 0;
-  flex-grow: 1;
-}
+  main {
+    padding: 0;
+    flex-grow: 1;
+  }
 
-h1 {
-  font-family: "Quantico", sans-serif;
-  font-weight: 400;
-  font-size: 4rem;
-}
+  header h1 {
+    font-family: "Quantico", sans-serif;
+    font-weight: 400;
+    font-size: 4rem;
+  }
 
-header {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-}
+  header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
 
-header {
-  border-bottom: 1px solid var(--border);
-}
+  header {
+    border-bottom: 1px solid var(--border);
+  }
 
-footer {
-  border-top: 1px solid var(--border);
+  footer {
+    border-top: 1px solid var(--border);
+  }
 }

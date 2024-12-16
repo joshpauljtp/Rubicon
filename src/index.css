@@ -206,6 +206,10 @@ p {
   --spacing: 0;
 }
 
+.minHeight-auto {
+  min-height: auto !important;
+}
+
 a {
   color: inherit;
 }

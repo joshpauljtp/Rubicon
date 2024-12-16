@@ -10,20 +10,8 @@ body {
   place-items: center;
   min-height: 100dvh;
   background-color: #242424;
+  min-height: unset;
 
-  --shadow: 0 0 16px -2px currentColor;
-} */
-
-.instrumentCluster {
-  display: flex;
-  place-items: center;
-  min-height: 100dvh;
-  background-color: #242424;
-
-  --shadow: 0 0 16px -2px currentColor;
-}
-
-.alpha {
   --cardBg: #111111;
   --inactive: #6a6a6a;
   --primary: #6ce0a8;
@@ -31,25 +19,43 @@ body {
   --danger: #e06c6c;
   --warning: #e0d46c;
 
-  aspect-ratio: 18 / 9;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 3fr 4fr 3fr;
-  grid-template-rows: auto 64px;
-  gap: 0.25rem;
-  border-radius: 20px;
-  background-color: #1b1b1b;
-  padding: 1.5rem 1rem;
-  font-family: "Orbitron", system-ui, sans-serif;
-}
-
-.alpha > * {
-  padding: 1rem;
-  border-radius: 8px;
-  background-color: var(--cardBg);
-}
+  --shadow: 0 0 16px -2px currentColor;
+} */
 
 .alpha {
+  display: flex;
+  min-height: 100dvh;
+  background-color: #242424;
+  min-height: unset;
+
+  --cardBg: #111111;
+  --inactive: #6a6a6a;
+  --primary: #6ce0a8;
+  --primaryDark: #0c4127;
+  --danger: #e06c6c;
+  --warning: #e0d46c;
+
+  --shadow: 0 0 16px -2px currentColor;
+
+  & {
+    aspect-ratio: 18 / 9;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 4fr 3fr;
+    grid-template-rows: auto 64px;
+    gap: 0.25rem;
+    border-radius: 20px;
+    background-color: #1b1b1b;
+    padding: 1.5rem 1rem;
+    font-family: "Orbitron", system-ui, sans-serif;
+  }
+
+  & > * {
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: var(--cardBg);
+  }
+
   section {
     grid-column: span 3;
     color: var(--primary);
@@ -271,17 +277,17 @@ body {
 
   /* Bottom line for "1" character */
   /* .speed h1 div[data-number="1"]::after {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: 0.42rem;
-    left: 56%;
-    translate: -50% -50%;
-    width: 50%;
-    height: 0.09em;
-    background: currentColor;
-    box-shadow: var(--shadow);
-  } */
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0.42rem;
+      left: 56%;
+      translate: -50% -50%;
+      width: 50%;
+      height: 0.09em;
+      background: currentColor;
+      box-shadow: var(--shadow);
+    } */
 
   .speed h1 div[data-number="1"],
   .speed h1 div[data-number="7"] {

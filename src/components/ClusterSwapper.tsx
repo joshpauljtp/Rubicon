@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from "react";
+import { lazy, useState } from "react";
 import { Cluster } from "../types";
 import TestSuite from "./TestSuite";
 import useConfig from "./useConfig";
@@ -6,6 +6,18 @@ import useConfig from "./useConfig";
 const Alpha = lazy(() => import("./Alpha"));
 const Funk = lazy(() => import("./Funk"));
 const Testarossa = lazy(() => import("./Testarossa"));
+const Layout = lazy(() => import("./core/Layout"));
+
+const Wrapper = ({
+  children,
+  showTestSuite,
+}: {
+  children: React.ReactNode;
+  showTestSuite: boolean;
+}) => {
+  if (showTestSuite) return <Layout>{children}</Layout>;
+  else return <>{children}</>;
+};
 
 function ClusterSwapper({
   cluster,
@@ -24,7 +36,7 @@ function ClusterSwapper({
     [Cluster.TESTAROSSA]: <Testarossa config={config} />,
   };
 
-  const onMainClick = () => {
+  const fullscreenToggle = () => {
     setIsFullScreen((prev) => !prev);
 
     if (isFullscreen) {
@@ -34,13 +46,17 @@ function ClusterSwapper({
       body?.requestFullscreen();
     }
   };
+
   return (
-    <Suspense>
-      <main onClick={onMainClick}>
+    <Wrapper showTestSuite={showTestSuite}>
+      <div
+        className={`instrumentCluster ${showTestSuite ? "minHeight-auto" : ""}`}
+        onClick={fullscreenToggle}
+      >
         {ClusterComponent[cluster] ?? ClusterComponent[DEFAULT_CLUSTER]}
-      </main>
+      </div>
       {showTestSuite && <TestSuite config={config} setConfig={setConfig} />}
-    </Suspense>
+    </Wrapper>
   );
 }
 

@@ -44,7 +44,11 @@ function ClusterTestarossa({ config }: Props) {
     rive?.setNumberStateAtPath("Rev", config.rpm / 100, "RPM");
   }, [rive, config]);
 
-  return <RiveComponent style={{ width: "100% !important" }} />;
+  return (
+    <RiveComponent
+      style={{ width: "100% !important", aspectRatio: "18 / 9" }}
+    />
+  );
 }
 
 export default ClusterTestarossa;
