@@ -35,7 +35,18 @@
     border-bottom: 1px solid var(--border);
   }
 
+  main > div {
+    border-bottom: 1px solid var(--border);
+  }
+
   footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     border-top: 1px solid var(--border);
+
+    span + span {
+      color: var(--foregroundMuted);
+    }
   }
 }

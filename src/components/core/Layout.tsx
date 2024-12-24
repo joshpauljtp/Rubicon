@@ -20,11 +20,14 @@ function Layout({
       </header>
       <main>{children}</main>
       <footer>
-        Made by{" "}
-        <a href="https://metamatic.dev" target="_blank">
-          Joshua
-        </a>
-        .
+        <span>
+          Made by{" "}
+          <a href="https://metamatic.dev" target="_blank">
+            Joshua
+          </a>
+          .
+        </span>
+        <span>Compatible with TVS Apache RTR motorcycles.</span>
       </footer>
     </div>
   );
