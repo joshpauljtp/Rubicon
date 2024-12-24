@@ -1,123 +1,25 @@
 section {
   border-bottom: 1px solid var(--border);
+
+  & > & + & {
+    border-left: 1px solid var(--border);
+  }
+
+  & > & {
+    border-bottom: none;
+  }
 }
 
 p {
   color: var(--foregroundMuted);
 }
 
-.info p {
-  width: 50%;
-}
-.info div {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.clusterContainer {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing);
-}
-
-.cluster {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  height: 400px;
+.card {
+  padding: 0 !important;
   border: 1px solid var(--border);
 }
 
-.cluster img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.cluster .details {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: var(--spacing);
-  border-right: 1px solid var(--border);
-}
-
-.cluster img + .details {
-  border-left: 1px solid var(--border);
-  border-right: none;
-}
-
-.cluster .details p {
-  margin-bottom: 0.5rem;
-}
-
-aside {
-  position: fixed;
-  inset: 0;
+.dualGrid {
   display: grid;
-  place-items: center;
-  background-color: rgb(0 0 0 / 0.5);
-}
-
-aside > div {
-  width: min(100%, 800px);
-  max-height: 800px;
-  background-color: var(--background);
-  border: 1px solid var(--border);
-  padding: var(--spacing);
-  overflow-y: auto;
-}
-
-aside ol {
-  padding-left: 1rem;
-  color: var(--foregroundMuted);
-}
-
-.ctaContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing);
-  margin-top: var(--spacing);
-  margin-bottom: var(--spacing);
-}
-
-.demoMode {
-  animation: pillPulse 0.25s 8 alternate ease-in-out, pillPulse 2s 2s ease-out;
-}
-
-@keyframes pillPulse {
-  0% {
-    color: #adcaef;
-    background: #6788e963;
-    border-color: #779dce;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .cluster {
-    grid-template-columns: 1fr;
-    grid-auto-rows: max-content;
-    height: auto;
-  }
-
-  .info p {
-    width: 100%;
-  }
-
-  .cluster .details {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: var(--spacing);
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .cluster img + .details {
-    border: none;
-    border-top: 1px solid var(--border);
-  }
+  grid-template-columns: repeat(2, 1fr);
 }

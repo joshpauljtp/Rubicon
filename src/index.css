@@ -206,6 +206,10 @@ p {
   --spacing: 0;
 }
 
+.noBorder {
+  border: none;
+}
+
 .minHeight-auto {
   min-height: auto !important;
 }
