@@ -1,4 +1,5 @@
-import { useRive } from "@rive-app/react-canvas";
+import riveWASMResource from "@rive-app/canvas/rive.wasm";
+import { RuntimeLoader, useRive } from "@rive-app/react-canvas";
 import { useEffect } from "react";
 import RiveFile from "../../assets/Testarossa/testarossa.riv";
 import { Config } from "../../types";
@@ -6,14 +7,20 @@ import "./styles.css";
 
 interface Props {
   config: Config;
+  showTestSuite?: boolean;
 }
-function ClusterTestarossa({ config }: Props) {
+
+function ClusterTestarossa({ config, showTestSuite }: Props) {
   const { rive, RiveComponent } = useRive({
     src: RiveFile,
     stateMachines: "State Machine 1",
     artboard: "Dash",
     autoplay: true,
   });
+
+  useEffect(() => {
+    RuntimeLoader.setWasmUrl(riveWASMResource);
+  }, []);
 
   useEffect(() => {
     rive?.setTextRunValueAtPath("SpeedRun", config.speed.toString(), "Speedo");
@@ -45,9 +52,11 @@ function ClusterTestarossa({ config }: Props) {
   }, [rive, config]);
 
   return (
-    <RiveComponent
-      style={{ width: "100% !important", aspectRatio: "18 / 9" }}
-    />
+    <div style={{ minWidth: showTestSuite ? "initial" : "100vw" }}>
+      <RiveComponent
+        style={{ width: "100% !important", aspectRatio: "18 / 9" }}
+      />
+    </div>
   );
 }
 

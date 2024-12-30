@@ -33,7 +33,9 @@ function ClusterSwapper({
   const ClusterComponent = {
     [Cluster.ALPHA]: <Alpha config={config} />,
     [Cluster.FUNK]: <Funk config={config} />,
-    [Cluster.TESTAROSSA]: <Testarossa config={config} />,
+    [Cluster.TESTAROSSA]: (
+      <Testarossa config={config} showTestSuite={showTestSuite} />
+    ),
   };
 
   const fullscreenToggle = () => {
