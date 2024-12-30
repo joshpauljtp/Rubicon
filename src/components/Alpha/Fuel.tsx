@@ -41,7 +41,7 @@ function Fuel({ fuelPercent }: Props) {
       </div>
       <div className="fuel__divisions">
         <span>E</span>
-        <span>
+        <span style={{ width: "3rem" }}>
           <FuelPump className="fuel__icon" />
         </span>
         <span>F</span>
