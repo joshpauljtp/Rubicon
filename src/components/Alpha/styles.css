@@ -31,7 +31,7 @@ body {
   --danger: #e06c6c;
   --warning: #e0d46c;
 
-  aspect-ratio: 18 / 9;
+  aspect-ratio: 18 / 8.5;
   width: 100%;
   display: grid;
   grid-template-columns: 3fr 4fr 3fr;
@@ -39,7 +39,7 @@ body {
   gap: 0.25rem;
   border-radius: 20px;
   background-color: #1b1b1b;
-  padding: 1.5rem 1rem;
+  padding: 0.5rem 1rem;
   font-family: "Orbitron", system-ui, sans-serif;
 }
 
@@ -134,8 +134,8 @@ body {
 
   .fuel__icon {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
     translate: -50% -50%;
     font-size: 3rem;
     color: var(--fuelIcon);
@@ -192,19 +192,6 @@ body {
     width: 100%;
     height: 100%;
     animation: indicator 0.5s infinite alternate;
-  }
-
-  @keyframes indicator {
-    0%,
-    10% {
-      background-color: var(--primary);
-      color: var(--primaryDark);
-    }
-    80%,
-    100% {
-      background-color: var(--primaryDark);
-      color: var(--primary);
-    }
   }
 
   .rpm {
@@ -325,5 +312,18 @@ body {
   .secondary__icons > svg.abs[data-active="true"],
   .secondary__icons > svg.service[data-active="true"] {
     color: var(--warning);
+  }
+}
+
+@keyframes indicator {
+  0%,
+  10% {
+    background-color: var(--primary);
+    color: var(--primaryDark);
+  }
+  80%,
+  100% {
+    background-color: var(--primaryDark);
+    color: var(--primary);
   }
 }
