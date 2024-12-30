@@ -35,12 +35,22 @@ p {
   color: var(--foregroundMuted);
 }
 
-.info p {
-  width: 50%;
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.info div {
+
+.info p {
+  width: 75%;
+}
+.info .textContent div {
   display: flex;
   gap: 0.5rem;
+}
+
+.info iframe {
+  border: 1px solid var(--border);
 }
 
 .clusterContainer {
