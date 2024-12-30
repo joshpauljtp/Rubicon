@@ -206,6 +206,10 @@ p {
   --spacing: 0;
 }
 
+.enforceSpacing {
+  --spacing: 1.5rem;
+}
+
 .noBorder {
   border: none;
 }

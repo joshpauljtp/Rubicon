@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ReadyState } from "react-use-websocket";
+import HeroImage from "../../assets/Home/HeroImage.png";
 import CodeIcon from "../../assets/Info/CodeIcon";
 import RiveIcon from "../../assets/Info/RiveIcon";
 import { CLUSTERS } from "../constants";
@@ -54,6 +55,54 @@ function Home() {
     );
   }
 
+  function Gallery() {
+    const arr = [
+      {
+        url: "https://www.youtube-nocookie.com/embed/VXp8Rq8VpyE?si=NmXkdj3ygQ-Iz_m8",
+        thumbnail: "https://i.ytimg.com/vi/VXp8Rq8VpyE/mqdefault.jpg",
+      },
+      {
+        url: "https://www.youtube.com/embed/o8mGpcZ-2eA?si=brMJx3Azs7QkdcYi",
+        thumbnail: "https://i.ytimg.com/vi/o8mGpcZ-2eA/mqdefault.jpg",
+      },
+      {
+        url: "https://www.youtube.com/embed/r4n-HYZLNtU?si=WgDWX-QQ8ycC0vVf",
+        thumbnail: "https://i.ytimg.com/vi/VXp8Rq8VpyE/mqdefault.jpg",
+      },
+    ];
+
+    const [arrIndex, setArrIndex] = useState(0);
+
+    return (
+      <section className={styles.gallery}>
+        <h2>Videos</h2>
+        <section className="noSpacing">
+          <div className={styles.mainVideo}>
+            <iframe
+              width="450"
+              height="260"
+              src={arr[arrIndex].url}
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <section className={styles.thumbnails + " noBorder enforceSpacing"}>
+            {arr.map((obj, index) => (
+              <img
+                className={index === arrIndex ? styles.active : ""}
+                src={obj.thumbnail}
+                key={index}
+                onClick={() => setArrIndex(index)}
+              />
+            ))}
+          </section>
+        </section>
+      </section>
+    );
+  }
+
   return (
     <Layout
       headerChildren={
@@ -77,7 +126,7 @@ function Home() {
             Welcome to Project Rubicon - combining IoT and Web tech to create a
             platform for your personal motorcycle instrument cluster. This
             project is currently in a POC state, with newer improvements being
-            added over time. For more information, check out our link.
+            added over time.
           </p>
           <div>
             <a href="/info">
@@ -88,18 +137,9 @@ function Home() {
             </a>
           </div>
         </div>
-        <div>
-          <iframe
-            width="450"
-            height="315"
-            src="https://www.youtube-nocookie.com/embed/rnFQd-8ULgM?si=N6NsnyME2j2kugPX"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe>
-        </div>
+        <img src={HeroImage} alt="" />
       </section>
+      <Gallery />
       <section className={styles.clusterContainer}>
         <h2>Clusters</h2>
         {CLUSTERS.map((cluster) => (
