@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import useWebSocket, { ReadyState } from "react-use-websocket";
 import { Config } from "../types";
 
-const RPM_MULTIPLIER = 2;
-const SPEED_MULTIPLIER = 0.05;
+// const RPM_MULTIPLIER = 2;
+// const SPEED_MULTIPLIER = 0.05;
 
 function useConfig() {
   const socketUrl = `ws://192.168.116.227:80/ws`;
@@ -27,8 +27,8 @@ function useConfig() {
   const [currentRpm, setCurrentRpm] = useState(0); // For smooth transitions
   const [targetRpm, setTargetRpm] = useState(0);
 
-  const [currentSpeed, setCurrentSpeed] = useState(0); // For smooth transitions
-  const [targetSpeed, setTargetSpeed] = useState(0);
+  // const [currentSpeed, setCurrentSpeed] = useState(0); // For smooth transitions
+  // const [targetSpeed, setTargetSpeed] = useState(0);
 
   // useEffect(() => {
   //   const ws = new WebSocket(socketUrl);
@@ -163,36 +163,36 @@ function useConfig() {
     return () => clearInterval(interval); // Clean up interval on unmount
   }, [targetRpm, currentRpm]);
 
-  useEffect(() => {
-    if (currentSpeed === targetSpeed) return; // Exit if at target value
+  // useEffect(() => {
+  //   if (currentSpeed === targetSpeed) return; // Exit if at target value
 
-    const step = targetSpeed > currentSpeed ? 2 : -2; // Increment or decrement
-    const interval = setInterval(() => {
-      setCurrentSpeed((prev) => {
-        const nextValue = prev + step;
-        if (
-          (step > 0 && nextValue >= targetSpeed) ||
-          (step < 0 && nextValue <= targetSpeed)
-        ) {
-          clearInterval(interval);
-          setConfig((prevConfig) => ({
-            ...prevConfig,
-            speed: targetSpeed < 0 ? 0 : targetSpeed, // Set the exact target RPM as final value
-          }));
-          return targetSpeed;
-        }
+  //   const step = targetSpeed > currentSpeed ? 2 : -2; // Increment or decrement
+  //   const interval = setInterval(() => {
+  //     setCurrentSpeed((prev) => {
+  //       const nextValue = prev + step;
+  //       if (
+  //         (step > 0 && nextValue >= targetSpeed) ||
+  //         (step < 0 && nextValue <= targetSpeed)
+  //       ) {
+  //         clearInterval(interval);
+  //         setConfig((prevConfig) => ({
+  //           ...prevConfig,
+  //           speed: targetSpeed < 0 ? 0 : targetSpeed, // Set the exact target RPM as final value
+  //         }));
+  //         return targetSpeed;
+  //       }
 
-        // Update currentSpeed incrementally and set it in config
-        setConfig((prevConfig) => ({
-          ...prevConfig,
-          speed: nextValue,
-        }));
-        return nextValue;
-      });
-    }, 10); // Adjust interval duration for smoothness
+  //       // Update currentSpeed incrementally and set it in config
+  //       setConfig((prevConfig) => ({
+  //         ...prevConfig,
+  //         speed: nextValue,
+  //       }));
+  //       return nextValue;
+  //     });
+  //   }, 10); // Adjust interval duration for smoothness
 
-    return () => clearInterval(interval); // Clean up interval on unmount
-  }, [targetSpeed, currentSpeed]);
+  //   return () => clearInterval(interval); // Clean up interval on unmount
+  // }, [targetSpeed, currentSpeed]);
 
   return {
     config,
