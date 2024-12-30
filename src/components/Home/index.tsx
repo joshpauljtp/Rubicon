@@ -71,20 +71,33 @@ function Home() {
       }
     >
       <section className={styles.info}>
-        <h2>Custom Motorcycle Instrument Cluster</h2>
-        <p>
-          Welcome to Project Rubicon - combining IoT and Web tech to create a
-          platform for your personal motorcycle instrument cluster. This project
-          is currently in a POC state, with newer improvements being added over
-          time. For more information, check out our link.
-        </p>
+        <div className={styles.textContent}>
+          <h2>Custom Motorcycle Instrument Cluster</h2>
+          <p>
+            Welcome to Project Rubicon - combining IoT and Web tech to create a
+            platform for your personal motorcycle instrument cluster. This
+            project is currently in a POC state, with newer improvements being
+            added over time. For more information, check out our link.
+          </p>
+          <div>
+            <a href="/info">
+              <button>More Info</button>
+            </a>
+            <a href="https://github.com/joshpauljtp/Rubicon" target="_blank">
+              <button className="silent outlined">GitHub</button>
+            </a>
+          </div>
+        </div>
         <div>
-          <a href="/info">
-            <button>More Info</button>
-          </a>
-          <a href="https://github.com/joshpauljtp/Rubicon" target="_blank">
-            <button className="silent outlined">GitHub</button>
-          </a>
+          <iframe
+            width="450"
+            height="315"
+            src="https://www.youtube-nocookie.com/embed/rnFQd-8ULgM?si=N6NsnyME2j2kugPX"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
         </div>
       </section>
       <section className={styles.clusterContainer}>
