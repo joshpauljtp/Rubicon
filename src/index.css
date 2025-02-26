@@ -258,6 +258,7 @@ button.pill:hover {
 
 .test-suite div {
   display: flex;
+  justify-content: flex-end;
   gap: 0.5rem;
 }
 
@@ -266,12 +267,16 @@ button.pill:hover {
 }
 
 .test-suite input[type="number"] {
-  width: 100px;
+  width: 60px;
 }
 
 .test-suite input[type="number"],
 .test-suite input[type="checkbox"] {
   justify-self: end;
+}
+
+.test-suite a {
+  grid-column: span 2;
 }
 
 .textDecoration-none {

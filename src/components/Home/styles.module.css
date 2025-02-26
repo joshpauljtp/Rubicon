@@ -53,6 +53,7 @@ p {
 .info img {
   border: 1px solid var(--border);
   min-height: 302px;
+  object-fit: cover;
 }
 
 .gallery > section {
